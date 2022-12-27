@@ -2,35 +2,28 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 
+const author = 'Michelle Obama';
+const title = 'The Light We Carry: Overcoming in Uncertain Times';
+const img = './images/book1.jpeg';
+
 const BookList = () => {
   return (
     <section className='booklist'>
-      <Book />
-      <Book />
-      <Book />
-      <Book />
+      <Book author={author} title={title} img={img} />
+      <Book author={author} title={title} img={img} />
     </section>
   );
 };
 
-const Book = () => {
+const Book = ({ img, title, author }) => {
   return (
     <article className='book'>
-      <Image />
-      <Title />
-      <Author />
+      <img src={img} alt='The Light We Carry: Overcoming in Uncertain Times' />
+      <h2>{title}</h2>
+      <h4>{author}</h4>
     </article>
   );
 };
-
-const Image = () => (
-  <img
-    src='https://images-na.ssl-images-amazon.com/images/I/91MowzF+WZL._AC_UL600_SR600,400_.jpg'
-    alt='The Light We Carry: Overcoming in Uncertain Times'
-  />
-);
-const Title = () => <h2>The Light We Carry: Overcoming in Uncertain Times</h2>;
-const Author = () => <p>Michelle Obama</p>;
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
